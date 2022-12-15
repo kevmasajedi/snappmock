@@ -2,13 +2,18 @@
 import LoginPage from "./Components/LoginPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
 import CentralLoader from "./CentralLoader";
-
+import HomePage from "./Components/HomePage";
+ 
 
 const title = "اسنپ‌ماک!"
 const router = createBrowserRouter([ 
   {
     path:"/", 
     loader: CentralLoader
+  },
+  {
+    path:"/home",
+    element: <HomePage />
   },
   {
     path: "/login",
