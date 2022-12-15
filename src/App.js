@@ -1,15 +1,21 @@
-
-import { useState } from "react";
+ 
 import LoginPage from "./Components/LoginPage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import CentralLoader from "./CentralLoader";
 
-const router = createBrowserRouter([
+
+const title = "اسنپ‌ماک!"
+const router = createBrowserRouter([ 
+  {
+    path:"/", 
+    loader: CentralLoader
+  },
   {
     path: "/login",
-    element: <LoginPage title="اسنپ‌ماک!" />
+    element: <LoginPage title={title} />
   }
 ])
-function App() {
+function App({title}) {
   return ( 
     <RouterProvider router={router} />
   );

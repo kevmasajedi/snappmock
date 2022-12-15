@@ -1,4 +1,4 @@
-import OneDigitInputElement from "../../OneDigitInputElement";
+import OneDigitInputElement from "../../Elements/OneDigitInputElement";
 import { useState, useEffect } from "react";
 import "./index.css";
 

@@ -1,14 +1,14 @@
 import BannerContainer from "./BannerContainer";
 import FullscreenContainer from "../FullscreenContainer";
-import HeadingElement from "../HeadingElement";
-import LoaderElement from "../LoaderElement";
+import HeadingElement from "../Elements/HeadingElement";
+import LoaderElement from "../Elements/LoaderElement";
 import LoginFormContainer from "./LoginFormContainer";
 import LogoContainer from "./LogoContainer";
-import TextElement from "../TextElement";
-import InputElement from "../InputElement";
-import IconElement from "../IconElement";
+import TextElement from "../Elements/TextElement";
+import InputElement from "../Elements/InputElement";
+import IconElement from "../Elements/IconElement";
 import { useEffect, useState } from "react";
-import ButtonElement from "../ButtonElement";
+import ButtonElement from "../Elements/ButtonElement";
 import AuthCodeContainer from "./AuthCodeContainer";
 import FooterContainer from "./FooterContainer";
 import Cookies from "universal-cookie";
@@ -40,7 +40,7 @@ const Login = ({ title }) => {
   let stepFormContent = () => {
     if (step == 1) {
       let cookies = new Cookies();
-      if (cookies.get("phone").length == 11) setStep(3);
+      if (cookies.get("phone") && cookies.get("phone").length == 11) setStep(3);
       return (
         <>
           <IconElement
