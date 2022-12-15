@@ -1,0 +1,84 @@
+.bottom-container { 
+    display: flex;
+    flex-direction: column;
+    font-family: Vazir-Regular; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    animation: slideInFromBottom 0.3s ease-in-out; 
+    user-select: none; 
+} 
+.fullscreen.bottom-container {
+    animation: fullHeight 0.3s ease-in-out;
+    height: 100%;
+}
+/* iPhone 5/SE */
+@media screen and (max-width:325px) { 
+    .bottom-container { 
+        font-size: 13px;
+        padding: 13px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 13px 0;
+    }
+} 
+/* iPhone 6/7/8 Plus */
+@media screen and (min-width:325px) and (max-width:430px) { 
+    .bottom-container { 
+        font-size: 14px;
+        padding: 14px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 14px 0;
+    }
+}
+
+/* iPhone 5/SE Horizontal */
+@media screen and (min-width:430px) and (max-width:570px) { 
+    .bottom-container { 
+        font-size: 14px;
+        padding: 14px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 14px 0;
+    }
+}
+/* iPad */
+@media screen and (min-width:570px) and (max-width:770px) { 
+    .bottom-container { 
+        font-size: 16px;
+        padding: 16px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 16px 0;
+    }
+}
+/* iPad Pro */
+@media screen and (min-width:770px) and (max-width:1030px) { 
+    .bottom-container { 
+        font-size: 17px;
+        padding: 17px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 17px 0;
+    }
+}
+/* Laptop Large */
+@media screen and (min-width:1030px) and (max-width:1440px) { 
+    .bottom-container { 
+        font-size: 18px;
+        padding: 18px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 18px 0;
+    }
+}
+/* Desktop Large  (up to 2560px) */
+@media screen and (min-width:1440px)  { 
+    .bottom-container { 
+        font-size: 20px;
+        padding: 20px;
+    }
+    .bottom-container div, .bottom-container input{
+        margin: 20px 0;
+    }
+}

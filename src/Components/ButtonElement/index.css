@@ -1,0 +1,30 @@
+.button {
+    display: inline-flex;
+    max-width: max-content;
+    align-self: flex-end;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: inherit;
+    padding: 12px 21px; 
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.inline.button {
+    display: inline-block;
+    float: none;
+    background-color: transparent;
+    padding: 0 5px;
+    font-weight: normal;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    font-size: smaller;
+}
+.button:hover {
+    filter: brightness(110%);
+    transform: scale(0.98,0.98);
+}
+.button.bg-green{
+    color: white;
+}

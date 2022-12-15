@@ -1,0 +1,7 @@
+.lds-dual-ring {
+    margin-top: 10px;
+}
+.lds-dual-ring:after { 
+  width: 32px;
+  height: 32px;
+}

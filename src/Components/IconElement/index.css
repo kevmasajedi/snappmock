@@ -1,0 +1,11 @@
+
+.icon.interactive{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.icon.interactive.gg-close:hover {
+    transform:rotate(180deg);
+}
+.icon.interactive.gg-chevron-right:hover {
+    transform: translateX(15%);
+}
