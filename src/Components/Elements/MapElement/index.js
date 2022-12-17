@@ -8,7 +8,7 @@ const MapElement = ({onClickHandler, onMoveHandler, markerMode, position, marker
   const mapProps = {
     style: { height: "100vh", width: "100vw", overflow: "hidden" },
     center: position,
-    zoom: 16,
+    zoom: 17,
     scrollWheelZoom: true,
   };
   const tileProps = {
