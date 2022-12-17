@@ -1,0 +1,7 @@
+
+.leaflet-marker-shadow{
+    display: none;
+}
+.leaflet-marker-icon:hover {
+    cursor:pointer;
+}

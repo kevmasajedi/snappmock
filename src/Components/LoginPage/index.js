@@ -12,6 +12,7 @@ import ButtonElement from "../Elements/ButtonElement";
 import AuthCodeContainer from "./AuthCodeContainer";
 import FooterContainer from "./FooterContainer";
 import Cookies from "universal-cookie";
+import {useNavigate} from "react-router-dom" ; 
 
 const Login = ({ title }) => {
   const [fullscreenMode, setFullscreenMode] = useState(false);
@@ -19,7 +20,7 @@ const Login = ({ title }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState(false); 
   const [isLoading, setIsLoading] = useState(true);
-
+  const navigate = useNavigate() ; 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
@@ -27,7 +28,10 @@ const Login = ({ title }) => {
     }
   )
   let confirmationCode = () => phoneNumber.substring(5);
-
+  let setLoading = () => {
+    setFullscreenMode(false);
+    setIsLoading(true);
+  }
   let phoneNumberChangeGuard = (e) => {
     e.preventDefault();
     let enteredPhone = e.target.value;
@@ -113,8 +117,8 @@ const Login = ({ title }) => {
               if (code === confirmationCode()) {
                 let cookies = new Cookies();
                 cookies.set("phone", phoneNumber, { path: "/" });
-                setStep(step + 1);
-                setFullscreenMode(false);
+                setLoading() ;
+                setStep(step + 1); 
               }
             }}
           />
@@ -128,7 +132,11 @@ const Login = ({ title }) => {
         </>
       );
     }
-    if (step == 3) return <></>;
+    if (step == 3) { 
+      setTimeout(() => {
+        navigate("/home")
+      }, 1000);
+    }
   };
 
   return (

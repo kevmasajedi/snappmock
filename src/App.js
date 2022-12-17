@@ -2,8 +2,7 @@
 import LoginPage from "./Components/LoginPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
 import CentralLoader from "./CentralLoader";
-import HomePage from "./Components/HomePage";
- 
+import HomePage from "./Components/HomePage"; 
 
 const title = "اسنپ‌ماک!"
 const router = createBrowserRouter([ 
@@ -17,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LoginPage title={title} />
+    element: <LoginPage title={title} /> 
   }
 ])
 function App({title}) {
