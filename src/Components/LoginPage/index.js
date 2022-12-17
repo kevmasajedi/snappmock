@@ -1,4 +1,4 @@
-import BannerContainer from "./BannerContainer";
+import BannerContainer from "../BannerContainer";
 import FullscreenContainer from "../FullscreenContainer";
 import HeadingElement from "../Elements/HeadingElement";
 import LoaderElement from "../Elements/LoaderElement";

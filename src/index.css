@@ -22,6 +22,9 @@ a {
 .bg-white {
   background-color: #F7F7F7;
 }
+.bg-transparent {
+  background-color: transparent;
+}
 
 .black {
   color: #393E46;
@@ -35,6 +38,9 @@ a {
 }
 .white {
   color: #F7F7F7;
+}
+.transparent {
+  color: transparent;
 }
 
 /* Fonts: */

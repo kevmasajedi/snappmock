@@ -8,11 +8,12 @@ const MapElement = ({onClickHandler, onMoveHandler, markerMode, position, marker
   const mapProps = {
     style: { height: "100vh", width: "100vw", overflow: "hidden" },
     center: position,
-    zoom: 17,
+    zoom: 15,
     scrollWheelZoom: true,
   };
   const tileProps = {
     url: "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+    // url: `https://{s}.tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token=y8U8WusMGSrQZR1kvfHhQk5kKMIM3Ns7a6qLqeTDfQrdLeoPLfmdR5UZzBovpYLQ`
   };
 
   return (
