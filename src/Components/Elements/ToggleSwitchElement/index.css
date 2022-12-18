@@ -1,0 +1,43 @@
+.toggle-switch {
+  display: flex;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: calc(100% - 1px);
+  border-radius: 32px; 
+  padding: 2px;
+  position: absolute;
+  height: 100%;
+  max-width: max-content;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.toggle-switch.shadowed {
+  box-shadow: 0 0 10px #ccc;
+}
+.toggle-option {
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+  border-radius: 32px;
+
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+
+  transition: 300ms;
+}
+.toggle-rail {
+  width: calc(50% - 2px); /* 2px = toggle-switch's padding * 1 */
+  height: calc(100% - 4px); /* 4px = toggle-switch's padding * 2 */
+  position: absolute;
+  z-index: 0;
+  border-radius: 32px;
+  transition: 200ms;
+  transition-property: transform;
+  user-select: none;
+}
+.toggle-rail.two {
+  transform: translateX(-100%);
+}

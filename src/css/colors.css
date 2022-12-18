@@ -6,13 +6,16 @@
   }
   .bg-green {
     /* background-color: #00c873; */
-    background-color: #1f9362;
+    background-color: #00cc6d;
   }
   .bg-cream {
     background-color: #ffe6bd;
   }
   .bg-white {
     background-color: #f7f7f7;
+  }
+  .bg-light-gray {
+    background-color: #999;
   }
   .bg-transparent {
     background-color: transparent;
@@ -23,13 +26,16 @@
   }
   .green {
     /* color: #00c873; */
-    color: #1f9362;
+    color: #00cc6d;
   }
   .cream {
     color: #ffe6bd;
   }
   .white {
     color: #f7f7f7;
+  }
+  .light-gray {
+    color: #999;
   }
   .transparent {
     color: transparent;

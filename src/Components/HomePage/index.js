@@ -7,6 +7,7 @@ import TopOverlayContainer from "./TopOverlayContainer";
 import BottomOverlayContainer from "./BottomOverlayContainer";
 import ButtonElement from "../Elements/ButtonElement";
 import IconElement from "../Elements/IconElement";
+import ToggleSwitchElement from "../Elements/ToggleSwitchElement";
 
 const HomePage = () => {
   const originData = useSelector((state) => state.revGeoData);
@@ -39,6 +40,22 @@ const HomePage = () => {
           colorClass="bg-white black"
         >
           <IconElement isVisible={true} iconClass="gg-home" />
+        </ButtonElement>
+        <ToggleSwitchElement
+          optA="برای خودم"
+          optB="برای دیگری"
+          hasShadow={true}
+          backgroundColorClass="bg-white"
+          switchColorClass="bg-green"
+        />
+        <ButtonElement
+          isVisible={true}
+          isDisabled={true}
+          isCircular={true}
+          hasShadow={true}
+          colorClass="bg-white black"
+        >
+          <IconElement isVisible={true} iconClass="gg-profile" />
         </ButtonElement>
       </TopOverlayContainer>
       <MapElement

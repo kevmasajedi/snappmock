@@ -3,6 +3,55 @@
   top: 0;
   left: 0;
   right: 0;
+
   /* backdrop-filter: blur(10px); */
-  z-index: 1000;
+  z-index: 640;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Vazir-Regular;
+}
+
+/* iPhone 5/SE */
+@media screen and (max-width: 325px) {
+  .top-overlay-container {
+    margin: 4px;
+  }
+}
+/* iPhone 6/7/8 Plus */
+@media screen and (min-width: 325px) and (max-width: 430px) {
+  .top-overlay-container {
+    margin: 6px;
+  }
+}
+
+/* iPhone 5/SE Horizontal */
+@media screen and (min-width: 430px) and (max-width: 570px) {
+  .top-overlay-container {
+    margin: 6px;
+  }
+}
+/* iPad */
+@media screen and (min-width: 570px) and (max-width: 770px) {
+  .top-overlay-container {
+    margin: 8px;
+  }
+}
+/* iPad Pro */
+@media screen and (min-width: 770px) and (max-width: 1030px) {
+  .top-overlay-container {
+    margin: 10px;
+  }
+}
+/* Laptop Large */
+@media screen and (min-width: 1030px) and (max-width: 1440px) {
+  .top-overlay-container {
+    margin: 12px;
+  }
+}
+/* Desktop Large  (up to 2560px) */
+@media screen and (min-width: 1440px) {
+  .top-overlay-container {
+    margin: 16px;
+  }
 }
