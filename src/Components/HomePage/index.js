@@ -5,6 +5,8 @@ import { getRevGeoData } from "../../API";
 import FullscreenContainer from "../FullscreenContainer";
 import TopOverlayContainer from "./TopOverlayContainer";
 import BottomOverlayContainer from "./BottomOverlayContainer";
+import ButtonElement from "../Elements/ButtonElement";
+import IconElement from "../Elements/IconElement";
 
 const HomePage = () => {
   const originData = useSelector((state) => state.revGeoData);
@@ -19,7 +21,6 @@ const HomePage = () => {
     if (markerMode == 2) setMarkerTwoPosition(center);
   };
   const onClickHandler = (markerPosition) => {
-    console.log(markerPosition);
     dispatch(
       getRevGeoData({ lat: markerPosition.lat, long: markerPosition.lng })
     );
@@ -30,7 +31,15 @@ const HomePage = () => {
   return (
     <FullscreenContainer colorClass={"bg-transparent"}>
       <TopOverlayContainer>
-        
+        <ButtonElement
+          isVisible={true}
+          isDisabled={true}
+          isCircular={true}
+          hasShadow={true}
+          colorClass="bg-white black"
+        >
+          <IconElement isVisible={true} iconClass="gg-home" />
+        </ButtonElement>
       </TopOverlayContainer>
       <MapElement
         onClickHandler={onClickHandler}
@@ -39,10 +48,8 @@ const HomePage = () => {
         position={position}
         markerOnePosition={markerOnePosition}
         markerTwoPosition={markerTwoPosition}
-      /> 
-      <BottomOverlayContainer>
-        
-      </BottomOverlayContainer>
+      />
+      <BottomOverlayContainer></BottomOverlayContainer>
     </FullscreenContainer>
   );
 };
