@@ -1,10 +1,11 @@
- 
 import MapElement from "../Elements/MapElement";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRevGeoData } from "../../API";
 import FullscreenContainer from "../FullscreenContainer";
-import FullScreenOverlayContainer from "./FullScreenOverlayContainer";
+import TopOverlayContainer from "./TopOverlayContainer";
+import BottomOverlayContainer from "./BottomOverlayContainer";
+
 const HomePage = () => {
   const originData = useSelector((state) => state.revGeoData);
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ const HomePage = () => {
   };
   return (
     <FullscreenContainer colorClass={"bg-transparent"}>
+      <TopOverlayContainer>
+        
+      </TopOverlayContainer>
       <MapElement
         onClickHandler={onClickHandler}
         onMoveHandler={onMoveHandler}
@@ -35,8 +39,10 @@ const HomePage = () => {
         position={position}
         markerOnePosition={markerOnePosition}
         markerTwoPosition={markerTwoPosition}
-      />
-      <FullScreenOverlayContainer></FullScreenOverlayContainer> 
+      /> 
+      <BottomOverlayContainer>
+        
+      </BottomOverlayContainer>
     </FullscreenContainer>
   );
 };

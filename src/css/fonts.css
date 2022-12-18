@@ -1,0 +1,18 @@
+/* Fonts: */
+@font-face {
+    font-family: Plasma-Square;
+    src: url("../../public/Plasma-Square-Dots.ttf");
+  }
+  @font-face {
+    font-family: Mikhak-Regular;
+    src: url("../../public/Mikhak-Regular.ttf");
+  }
+  @font-face {
+    font-family: Mikhak-Medium;
+    src: url("../../public/Mikhak-Medium.ttf");
+  }
+  @font-face {
+    font-family: Vazir-Regular;
+    src: url("../../public/Vazirmatn-Regular.ttf");
+  }
+  

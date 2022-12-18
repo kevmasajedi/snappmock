@@ -1,0 +1,36 @@
+
+/* colors:  */
+
+.bg-black {
+    background-color: #393e46;
+  }
+  .bg-green {
+    /* background-color: #00c873; */
+    background-color: #1f9362;
+  }
+  .bg-cream {
+    background-color: #ffe6bd;
+  }
+  .bg-white {
+    background-color: #f7f7f7;
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  
+  .black {
+    color: #393e46;
+  }
+  .green {
+    /* color: #00c873; */
+    color: #1f9362;
+  }
+  .cream {
+    color: #ffe6bd;
+  }
+  .white {
+    color: #f7f7f7;
+  }
+  .transparent {
+    color: transparent;
+  }
