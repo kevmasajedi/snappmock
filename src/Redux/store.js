@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import revGeoReducer from "./neshanSlice"; 
+import neshanReducer from "./neshanSlice"; 
 
 export default configureStore({
     reducer: {
-        revGeo : revGeoReducer
+        neshan : neshanReducer
     }, 
 })

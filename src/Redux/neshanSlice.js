@@ -8,8 +8,8 @@ export const neshanSlice = createSlice({
     },
     reducers: { }, 
     extraReducers: (builder) => {
-        builder.addCase(api.getRevGeoData.fulfilled , (state, action) => { 
-            state.revGeoData = action.payload
+        builder.addCase(api.getRevGeoData.fulfilled , (state, action) => {  
+            state.revGeoData = action.payload 
         }); 
     }
 })

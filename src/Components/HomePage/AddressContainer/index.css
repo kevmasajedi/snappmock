@@ -1,0 +1,42 @@
+.addr-container {
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 12px;
+}
+.addr-sub-container {
+  background: white;
+  padding: 16px;
+  font-family: inherit;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.addr-sub-container .text {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.addr-sub-container .text .icon {
+  margin-left: 5px;
+}
+
+.addr-sub-container.dest-mode:first-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: smaller;
+}
+
+.addr-sub-container.dest-mode:nth-child(2) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px solid #ddd;
+}
+
+.button.inline {
+  max-width: fit-content;
+  border-radius: 0;
+}

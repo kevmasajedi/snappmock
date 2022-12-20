@@ -37,7 +37,7 @@
 }
 .button:hover:not(.disabled) {
     filter: brightness(110%);
-    transform: scale(0.98,0.98);
+    /* transform: scale(0.98,0.98); */
 }
 .button.bg-green{
     color: white;

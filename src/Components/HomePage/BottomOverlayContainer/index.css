@@ -1,5 +1,80 @@
-.bottom-overlay-container { 
-    position: fixed; bottom:0 ; left: 0 ; right: 0;
-    height: 64px; backdrop-filter: blur(10px);
-    z-index: 1000;
+.bottom-overlay-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-family: Vazir-Regular;
+  z-index: 1000;
+}
+.bottom-overlay-container .button {
+  width: 100%;
+  max-width: none;
+  border-radius: 12px;
+  justify-content: center;
+  margin-top: 6px;
+}
+/* iPhone 5/SE */
+@media screen and (max-width: 325px) {
+  .bottom-overlay-container {
+    margin: 4px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 4px;
+  }
+}
+/* iPhone 6/7/8 Plus */
+@media screen and (min-width: 325px) and (max-width: 430px) {
+  .bottom-overlay-container {
+    margin: 6px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 6px;
+  }
+}
+
+/* iPhone 5/SE Horizontal */
+@media screen and (min-width: 430px) and (max-width: 570px) {
+  .bottom-overlay-container {
+    margin: 6px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 6px;
+  }
+}
+/* iPad */
+@media screen and (min-width: 570px) and (max-width: 770px) {
+  .bottom-overlay-container {
+    margin: 8px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 8px;
+  }
+}
+/* iPad Pro */
+@media screen and (min-width: 770px) and (max-width: 1030px) {
+  .bottom-overlay-container {
+    margin: 10px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 10px;
+  }
+}
+/* Laptop Large */
+@media screen and (min-width: 1030px) and (max-width: 1440px) {
+  .bottom-overlay-container {
+    margin: 12px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 12px;
+  }
+}
+/* Desktop Large  (up to 2560px) */
+@media screen and (min-width: 1440px) {
+  .bottom-overlay-container {
+    margin: 16px;
+  }
+  .bottom-overlay-container .button { 
+    margin-top: 16px;
+  }
 }

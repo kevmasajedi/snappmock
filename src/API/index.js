@@ -13,6 +13,8 @@ const client = axios.create({
 export const getRevGeoData = createAsyncThunk(
   "neshan/getReverseGeoData",
   ({ lat, long }) => {
-    client.get(`/reverse?lat=${lat}&lng=${long}`).then((resp) => resp.data);
+    return client
+      .get(`/reverse?lat=${lat}&lng=${long}`)
+      .then((resp) => resp.data);
   }
 );
