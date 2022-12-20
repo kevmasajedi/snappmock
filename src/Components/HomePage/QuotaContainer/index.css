@@ -1,0 +1,34 @@
+.quota-container {
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 12px;
+  background-color: white;
+  padding: 16px;
+  font-family: inherit;
+  user-select: none;
+  cursor: auto;
+  display: flex;
+  align-items: center;
+}
+
+.quota-container .text {
+  flex-grow: 1;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center; 
+  font-weight: 600;
+}
+
+.quota-container .text .icon {
+  margin-left: 5px;
+}
+
+.text sub {
+  font-family: Mikhak-Medium;
+  min-width: 100%;
+  margin-right: 28px;
+}
+
+.price {
+  font-family: Mikhak-Regular;
+  font-weight: bold;
+}

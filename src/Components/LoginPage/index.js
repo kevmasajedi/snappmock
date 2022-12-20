@@ -14,7 +14,7 @@ import FooterContainer from "./FooterContainer";
 import Cookies from "universal-cookie";
 import {useNavigate} from "react-router-dom" ; 
 
-const Login = ({ title }) => {
+const Login = ({ title , presentationMode }) => {
   const [fullscreenMode, setFullscreenMode] = useState(false);
   const [step, setStep] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -141,7 +141,7 @@ const Login = ({ title }) => {
 
   return (
     <>
-      <FullscreenContainer colorClass="bg-green">
+      <FullscreenContainer colorClass="bg-green" presentationMode={presentationMode}>
         <BannerContainer shouldCollapse={fullscreenMode}>
           <LogoContainer colorClass={"white"} title={title} />
           {isLoading && <LoaderElement />}

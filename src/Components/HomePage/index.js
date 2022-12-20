@@ -9,21 +9,27 @@ import ButtonElement from "../Elements/ButtonElement";
 import IconElement from "../Elements/IconElement";
 import ToggleSwitchElement from "../Elements/ToggleSwitchElement";
 import AddressContainer from "./AddressContainer";
+import QuotaContainer from "./QuotaContainer";
+import { useNavigate } from "react-router-dom";
 
+const position = [32.615, 51.67];
 const HomePage = (props) => {
   const dispatch = useDispatch();
-  const [position, setPosition] = useState([32.615, 51.67]);
+  const navigate = useNavigate(); 
+  const [price, setPrice] = useState(0);
   const [markerMode, setMarkerMode] = useState("origin");
-  const [confirmTripMode, setConfirmTripMode] = useState(false) ; 
+  const [confirmTripMode, setConfirmTripMode] = useState(false);
+  const [presentationMode , setPresentationMode] = useState(false) ; 
   const [markerOnePosition, setMarkerOnePosition] = useState(position);
   const [markerTwoPosition, setMarkerTwoPosition] = useState(markerOnePosition);
 
   const onMoveHandler = (center) => {
     if (markerMode === "origin") setMarkerOnePosition(center);
-    if (markerMode === "destination" && !confirmTripMode) setMarkerTwoPosition(center);
+    if (markerMode === "destination" && !confirmTripMode)
+      setMarkerTwoPosition(center);
   };
 
-  const onMoveEndHandler = (center) => { 
+  const onMoveEndHandler = (center) => {
     if (!confirmTripMode) dispatchRevGeoData(center);
   };
 
@@ -33,7 +39,7 @@ const HomePage = (props) => {
     if (markerMode === "origin") {
       setMarkerMode("destination");
     } else {
-      setConfirmTripMode(true); 
+      setConfirmTripMode(true);
     }
   };
 
@@ -41,19 +47,27 @@ const HomePage = (props) => {
     dispatch(getRevGeoData({ lat: position.lat, long: position.lng }));
   };
 
-  const isDestMode = () => (markerMode === "destination" );
+  const isDestMode = () => markerMode === "destination";
 
+  const setTripPrice = (price) => {
+    console.log(price);
+    setPrice(price);
+  };
   return (
-    <FullscreenContainer colorClass={"bg-transparent"}>
+    <FullscreenContainer colorClass={"bg-transparent"} presentationMode={presentationMode || props.presentationMode}>
       <TopOverlayContainer>
         <ButtonElement
           isVisible={true}
-          isDisabled={true}
+          isDisabled={!confirmTripMode}
           isCircular={true}
           hasShadow={true}
           colorClass="bg-white black"
+          onClickHandler={() => {
+            setConfirmTripMode(false) ;
+            setMarkerMode("origin")
+          }}
         >
-          <IconElement isVisible={true} iconClass="gg-home" />
+          <IconElement isVisible={true} iconClass="gg-chevron-right" />
         </ButtonElement>
         <ToggleSwitchElement
           optA="برای خودم"
@@ -64,10 +78,13 @@ const HomePage = (props) => {
         />
         <ButtonElement
           isVisible={true}
-          isDisabled={true}
+          isDisabled={false}
           isCircular={true}
           hasShadow={true}
           colorClass="bg-white black"
+          onClickHandler={() => {
+            navigate("/login")
+          }}
         >
           <IconElement isVisible={true} iconClass="gg-profile" />
         </ButtonElement>
@@ -76,6 +93,7 @@ const HomePage = (props) => {
         onClickHandler={onClickHandler}
         onMoveHandler={onMoveHandler}
         onMoveEndHandler={onMoveEndHandler}
+        onCalculatedPrice={setTripPrice}
         markerMode={markerMode}
         position={position}
         shouldFitBounds={confirmTripMode}
@@ -84,10 +102,15 @@ const HomePage = (props) => {
       />
       <BottomOverlayContainer>
         <AddressContainer
+          isVisible={!confirmTripMode}
           isDestMode={isDestMode()}
           addrData={props.revGeoData ? props.revGeoData : ""}
-          onRequestChangeOrigin={() => {setMarkerMode("origin"); setConfirmTripMode(false)}}
+          onRequestChangeOrigin={() => {
+            setMarkerMode("origin");
+            setConfirmTripMode(false);
+          }}
         />
+        <QuotaContainer isVisible={confirmTripMode} price={price} />
         {!isDestMode() && !confirmTripMode && (
           <ButtonElement
             onClickHandler={() => {
@@ -112,13 +135,12 @@ const HomePage = (props) => {
         )}
         {confirmTripMode && (
           <ButtonElement
-          onClickHandler={() => { 
-          }}
-          colorClass="bg-green white"
-          isVisible={true}
-        >
-          درخواست اسنپ‌
-        </ButtonElement>
+            onClickHandler={() => {setPresentationMode(true)}}
+            colorClass="bg-green white"
+            isVisible={true}
+          >
+            درخواست اسنپ‌
+          </ButtonElement>
         )}
       </BottomOverlayContainer>
     </FullscreenContainer>

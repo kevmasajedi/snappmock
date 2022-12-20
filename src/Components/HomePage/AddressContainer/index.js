@@ -4,14 +4,14 @@ import IconElement from "../../Elements/IconElement";
 import ButtonElement from "../../Elements/ButtonElement";
 import { useEffect, useState } from "react";
 
-const AddressContainer = ({ isDestMode, addrData, onRequestChangeOrigin }) => {
+const AddressContainer = ({ isVisible, isDestMode, addrData, onRequestChangeOrigin }) => {
   const [originAddrData, setOriginAddrData] = useState(addrData);
   useEffect(() => {
     if (isDestMode) {
     } else setOriginAddrData(addrData);
   }, [addrData]);
   return (
-    <div className="addr-container">
+    isVisible && <div className="addr-container">
       <div className={"addr-sub-container " + (isDestMode ? "dest-mode" : "")}>
         <TextElement colorClass="dark-gray">
           <IconElement isVisible={true} iconClass="gg-circle green" />

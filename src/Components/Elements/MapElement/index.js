@@ -7,6 +7,7 @@ const MapElement = ({
   onClickHandler,
   onMoveHandler,
   onMoveEndHandler,
+  onCalculatedPrice,
   markerMode,
   position,
   shouldFitBounds,
@@ -44,9 +45,14 @@ const MapElement = ({
         shouldDisplayPopup={shouldFitBounds}
         isVisible={markerMode === "destination"}
       />
-      <SetBoundsElement
+      <FitMapToBoundsProxy
         bounds={[markerOnePosition, markerTwoPosition]}
         shouldFitBounds={shouldFitBounds}
+      />
+      <GetBoundsPriceProxy
+        bounds={[markerOnePosition, markerTwoPosition]}
+        shouldCalculate={shouldFitBounds}
+        onCalculatedPrice={onCalculatedPrice}
       />
     </MapContainer>
   );
@@ -54,11 +60,10 @@ const MapElement = ({
 
 export default MapElement;
 
-const SetBoundsElement = ({ bounds, shouldFitBounds }) => {
+const FitMapToBoundsProxy = ({ bounds, shouldFitBounds }) => {
   const map = useMap();
   useEffect(() => {
     if (shouldFitBounds) {
-      console.log(Math.round(map.distance(bounds[0],bounds[1])));
       map.fitBounds(bounds);
       setTimeout(() => {
         map.setZoom(map.getBoundsZoom(bounds) - 2);
@@ -69,4 +74,17 @@ const SetBoundsElement = ({ bounds, shouldFitBounds }) => {
     }
   }, [shouldFitBounds]);
   return <></>;
+};
+
+const GetBoundsPriceProxy = ({
+  bounds,
+  onCalculatedPrice,
+  shouldCalculate,
+}) => {
+  const map = useMap();
+  useEffect(() => {
+    if (shouldCalculate && onCalculatedPrice) {
+      onCalculatedPrice(Math.round(map.distance(bounds[0], bounds[1]) / 100) * 500)
+    }
+  }, [shouldCalculate]);
 };

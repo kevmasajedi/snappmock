@@ -1,7 +1,7 @@
 import "./index.css" ; 
-const FullscreenContainer = ({colorClass, children}) => {
+const FullscreenContainer = ({colorClass, presentationMode, children}) => {
     return(
-        <div className={"fs-container " + colorClass} onClick={(e) => e.preventDefault()}>
+        <div className={"fs-container " + colorClass + (presentationMode ? " presentation " : "")} onClick={(e) => e.preventDefault()}>
             {children}
         </div>
     )
