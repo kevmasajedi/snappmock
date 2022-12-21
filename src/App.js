@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CentralLoader from "./CentralLoader";
 import HomePage from "./Components/HomePage";  
 import PresentationPage from "./Components/PresentationPage"
+import { useEffect } from "react";
 const title = "اسنپ‌ماک!";
 const router = createBrowserRouter([
   {
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
 ]);
 
 function App({ title }) {
+  useEffect(() => {
+    document.title = "اسنپ‌ماک! لایه فرانت‌اند اسنپ"
+  })
   return <RouterProvider router={router} />;
 }
 
