@@ -3,7 +3,7 @@ import FullscreenContainer from "../FullscreenContainer";
 import HeadingElement from "../Elements/HeadingElement";
 import LoaderElement from "../Elements/LoaderElement";
 import LoginFormContainer from "./LoginFormContainer";
-import LogoContainer from "./LogoContainer";
+import LogoContainer from "../LogoContainer";
 import TextElement from "../Elements/TextElement";
 import InputElement from "../Elements/InputElement";
 import IconElement from "../Elements/IconElement";
@@ -12,26 +12,25 @@ import ButtonElement from "../Elements/ButtonElement";
 import AuthCodeContainer from "./AuthCodeContainer";
 import FooterContainer from "./FooterContainer";
 import Cookies from "universal-cookie";
-import {useNavigate} from "react-router-dom" ; 
+import { useNavigate } from "react-router-dom";
 
-const Login = ({ title , presentationMode }) => {
+const Login = ({ title, presentationMode }) => {
   const [fullscreenMode, setFullscreenMode] = useState(false);
   const [step, setStep] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState(false); 
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate() ; 
+  const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false)
-      }, 2000)
-    }
-  )
+      setIsLoading(false);
+    }, 2000);
+  });
   let confirmationCode = () => phoneNumber.substring(5);
   let setLoading = () => {
     setFullscreenMode(false);
     setIsLoading(true);
-  }
+  };
   let phoneNumberChangeGuard = (e) => {
     e.preventDefault();
     let enteredPhone = e.target.value;
@@ -117,8 +116,8 @@ const Login = ({ title , presentationMode }) => {
               if (code === confirmationCode()) {
                 let cookies = new Cookies();
                 cookies.set("phone", phoneNumber, { path: "/" });
-                setLoading() ;
-                setStep(step + 1); 
+                setLoading();
+                setStep(step + 1);
               }
             }}
           />
@@ -132,16 +131,25 @@ const Login = ({ title , presentationMode }) => {
         </>
       );
     }
-    if (step == 3) { 
-      setTimeout(() => {
-        navigate("/home")
-      }, 1000);
+    if (step == 3) {
+      if (!presentationMode) {
+        setTimeout(() => {
+          navigate("/home");
+        }, 1000);
+      }
+      else {
+        let cookies = new Cookies() ; 
+        cookies.set("phone" , "") ;  
+      }
     }
   };
 
   return (
     <>
-      <FullscreenContainer colorClass="bg-green" presentationMode={presentationMode}>
+      <FullscreenContainer
+        colorClass="bg-green animate"
+        presentationMode={presentationMode}
+      >
         <BannerContainer shouldCollapse={fullscreenMode}>
           <LogoContainer colorClass={"white"} title={title} />
           {isLoading && <LoaderElement />}

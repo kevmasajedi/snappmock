@@ -21,8 +21,8 @@ const MapElement = ({
     scrollWheelZoom: true,
   };
   const tileProps = {
-    url: "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
-    // url: `https://{s}.tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token=y8U8WusMGSrQZR1kvfHhQk5kKMIM3Ns7a6qLqeTDfQrdLeoPLfmdR5UZzBovpYLQ`,
+    // url: "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+    url: `https://{s}.tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token=y8U8WusMGSrQZR1kvfHhQk5kKMIM3Ns7a6qLqeTDfQrdLeoPLfmdR5UZzBovpYLQ`,
   };
   return (
     <MapContainer {...mapProps}>

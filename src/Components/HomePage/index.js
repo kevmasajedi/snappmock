@@ -15,11 +15,11 @@ import { useNavigate } from "react-router-dom";
 const position = [32.615, 51.67];
 const HomePage = (props) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [price, setPrice] = useState(0);
   const [markerMode, setMarkerMode] = useState("origin");
   const [confirmTripMode, setConfirmTripMode] = useState(false);
-  const [presentationMode , setPresentationMode] = useState(false) ; 
+  const [presentationMode, setPresentationMode] = useState(false);
   const [markerOnePosition, setMarkerOnePosition] = useState(position);
   const [markerTwoPosition, setMarkerTwoPosition] = useState(markerOnePosition);
 
@@ -49,12 +49,12 @@ const HomePage = (props) => {
 
   const isDestMode = () => markerMode === "destination";
 
-  const setTripPrice = (price) => {
-    console.log(price);
-    setPrice(price);
-  };
+  const setTripPrice = (price) => setPrice(price);
   return (
-    <FullscreenContainer colorClass={"bg-transparent"} presentationMode={presentationMode || props.presentationMode}>
+    <FullscreenContainer
+      colorClass={"bg-transparent"}
+      presentationMode={presentationMode || props.presentationMode}
+    >
       <TopOverlayContainer>
         <ButtonElement
           isVisible={true}
@@ -63,8 +63,8 @@ const HomePage = (props) => {
           hasShadow={true}
           colorClass="bg-white black"
           onClickHandler={() => {
-            setConfirmTripMode(false) ;
-            setMarkerMode("origin")
+            setConfirmTripMode(false);
+            setMarkerMode("origin");
           }}
         >
           <IconElement isVisible={true} iconClass="gg-chevron-right" />
@@ -83,7 +83,7 @@ const HomePage = (props) => {
           hasShadow={true}
           colorClass="bg-white black"
           onClickHandler={() => {
-            navigate("/login")
+            navigate("/login");
           }}
         >
           <IconElement isVisible={true} iconClass="gg-profile" />
@@ -135,11 +135,16 @@ const HomePage = (props) => {
         )}
         {confirmTripMode && (
           <ButtonElement
-            onClickHandler={() => {setPresentationMode(true)}}
+            onClickHandler={() => {
+              setPresentationMode(true);
+              setTimeout(() => {
+                navigate("/present")
+              }, 1000);
+            }}
             colorClass="bg-green white"
             isVisible={true}
           >
-            درخواست اسنپ‌
+            درخواست خودرو
           </ButtonElement>
         )}
       </BottomOverlayContainer>

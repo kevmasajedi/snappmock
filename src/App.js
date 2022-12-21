@@ -1,7 +1,8 @@
 import LoginPage from "./Components/LoginPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CentralLoader from "./CentralLoader";
-import HomePage from "./Components/HomePage"; 
+import HomePage from "./Components/HomePage";  
+import PresentationPage from "./Components/PresentationPage"
 const title = "اسنپ‌ماک!";
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage title={title}/>,
   },
+  {
+    path: "/present", 
+    element: <PresentationPage title={title} />
+  }
 ]);
 
 function App({ title }) {
