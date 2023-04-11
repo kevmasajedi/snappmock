@@ -1,11 +1,11 @@
 import LoginPage from "./Components/LoginPage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import CentralLoader from "./CentralLoader";
 import HomePage from "./Components/HomePage";  
 import PresentationPage from "./Components/PresentationPage"
 import { useEffect } from "react";
 const title = "اسنپ‌ماک!";
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     loader: CentralLoader,
