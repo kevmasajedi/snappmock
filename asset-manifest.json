@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/snappmock/static/css/main.565dced6.css",
+    "main.js": "/snappmock/static/js/main.d25c1d48.js",
+    "static/media/Vazirmatn-Regular.ttf": "/snappmock/static/media/Vazirmatn-Regular.333a1b2bdd2755ccda1a.ttf",
+    "static/media/Mikhak-Regular.ttf": "/snappmock/static/media/Mikhak-Regular.0c71f17abce52cbedf52.ttf",
+    "static/media/Mikhak-Medium.ttf": "/snappmock/static/media/Mikhak-Medium.7c569947cc4665f2fbae.ttf",
+    "static/media/Plasma-Square-Dots.ttf": "/snappmock/static/media/Plasma-Square-Dots.5deb0d30a3cfc917f80b.ttf",
+    "index.html": "/snappmock/index.html",
+    "main.565dced6.css.map": "/snappmock/static/css/main.565dced6.css.map",
+    "main.d25c1d48.js.map": "/snappmock/static/js/main.d25c1d48.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.565dced6.css",
+    "static/js/main.d25c1d48.js"
+  ]
+}
